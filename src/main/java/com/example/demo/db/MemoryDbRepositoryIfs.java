@@ -1,5 +1,6 @@
 package com.example.demo.db;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface MemoryDbRepositoryIfs<T> {
@@ -10,6 +11,5 @@ public interface MemoryDbRepositoryIfs<T> {
 
     void deleteById(String id);
 
-
-
+    List<T> showAll();
 }

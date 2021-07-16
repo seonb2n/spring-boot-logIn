@@ -35,4 +35,9 @@ public abstract class MemoryDbRepositoryAbstract<T extends MeMoryDbEntity> imple
             db.remove(optionalEntity.get());
         }
     }
+
+    @Override
+    public List<T> showAll() {
+        return db;
+    }
 }

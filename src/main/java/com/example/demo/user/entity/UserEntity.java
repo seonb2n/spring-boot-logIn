@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class UserEntity extends MeMoryDbEntity {
 
+    private Integer index;
+    private String id;
     private String password;
     private String nickName;
 
