@@ -32,6 +32,27 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
+    public UserDto update(UserDto userDto) {
+        var entity = dtoToEntity(userDto);
+        var updateEntity = userRepository.update(entity);
+        return entityToDto(updateEntity);
+    }
+
+    public String login(String id, String password) {
+        var entity = userRepository.findById(id);
+        if(entity.isPresent()) {
+            if(entity.get().getPassword().equals(password)) {
+                return "Login Success";
+            }
+            else {
+                return "Password is Wrong";
+            }
+        }
+        else {
+            return "ID is Wrong";
+        }
+    }
+
 
     private UserDto entityToDto(UserEntity userEntity) {
         var userDto = new UserDto();

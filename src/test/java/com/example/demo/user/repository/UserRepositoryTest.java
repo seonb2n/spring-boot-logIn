@@ -33,6 +33,35 @@ public class UserRepositoryTest {
         System.out.println(userRepository.showAll());
     }
 
+    @Test
+    public void deleteTest() {
+        var userEntity = create("steve123");
+        userRepository.enroll(userEntity);
+        System.out.println(userRepository.showAll());
+
+        System.out.println("------------------");
+
+        userRepository.deleteById("steve123");
+        System.out.println(userRepository.showAll());
+        int count = userRepository.showAll().size();
+        Assertions.assertEquals(0,count);
+
+    }
+
+    @Test
+    public void updateTest() {
+        var userEntity = create("steve123");
+        userRepository.enroll(userEntity);
+        System.out.println(userRepository.showAll());
+
+        System.out.println("------------------");
+
+        userEntity.setNickName("jake");
+        userRepository.update(userEntity);
+        System.out.println(userRepository.showAll());
+
+    }
+
 
 
 }

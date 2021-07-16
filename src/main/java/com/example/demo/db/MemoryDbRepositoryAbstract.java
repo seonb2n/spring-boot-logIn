@@ -37,7 +37,17 @@ public abstract class MemoryDbRepositoryAbstract<T extends MeMoryDbEntity> imple
     }
 
     @Override
+    public T update(T entity) {
+        var optionalEntity = db.stream().filter(it -> it.getId() == entity.getId()).findFirst();
+        deleteById(optionalEntity.get().getId());
+        enroll(entity);
+        return entity;
+    }
+
+    @Override
     public List<T> showAll() {
         return db;
     }
+
+
 }

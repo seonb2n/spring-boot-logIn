@@ -12,4 +12,6 @@ public interface MemoryDbRepositoryIfs<T> {
     void deleteById(String id);
 
     List<T> showAll();
+
+    T update(T entity);
 }
