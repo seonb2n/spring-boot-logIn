@@ -65,9 +65,9 @@ public class UserService {
 
     private UserEntity dtoToEntity(UserDto userDto) {
         var userEntity = new UserEntity();
-        userEntity.setId(userEntity.getId());
-        userEntity.setPassword(userEntity.getPassword());
-        userEntity.setNickName(userEntity.getNickName());
+        userEntity.setId(userDto.getId());
+        userEntity.setPassword(userDto.getPassword());
+        userEntity.setNickName(userDto.getNickName());
 
         return userEntity;
     }

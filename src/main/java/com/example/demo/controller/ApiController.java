@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/api")
@@ -22,12 +24,12 @@ public class ApiController {
         return userService.enroll(userDto);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable String id) {
         userService.delete(id);
     }
 
-    @PostMapping("")
+    @PostMapping("/update")
     public UserDto update(@RequestBody UserDto userDto) {
         log.info("{}", userDto);
 
@@ -39,6 +41,11 @@ public class ApiController {
         String id = userLogInDto.getId();
         String password = userLogInDto.getPassword();
         return userService.login(id, password);
+    }
+
+    @GetMapping("/showAll")
+    public List<UserDto> showAll() {
+        return userService.showAll();
     }
 
 }
