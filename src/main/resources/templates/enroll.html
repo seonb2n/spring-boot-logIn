@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -9,13 +9,17 @@
 </head>
 
 <body>
-    <form class="box" action="index.html" method="post">
-        <h1>Enroll</h1>
-        <input type="text" name="" placeholder="ID">
-        <input type="text" name="" placeholder="Username">
-        <input type="password" name="" placeholder="Password">
-        <input type="submit" name="" value="Enroll">
-    </form>
+<form class="box" action="index.html" method="post">
+    <h1>Enroll</h1>
+    <input type="text" name="id" placeholder="ID">
+    <input type="text" name="nickName" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button onClick="enrollUser()" id="enroll-button">Enroll</button>
+</form>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="/js/enroll.js"></script>
 
 </html>

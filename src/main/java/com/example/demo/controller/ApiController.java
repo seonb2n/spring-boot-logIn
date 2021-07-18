@@ -16,6 +16,7 @@ import java.util.List;
 public class ApiController {
 
     private final UserService userService;
+    private final PageController pageController;
 
     @PostMapping("/enroll")
     public String enroll(@RequestBody UserDto userDto) {
